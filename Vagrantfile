@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
 
   # Configure the Web Server1
   config.vm.define "WebExampleBox1" do |web1|
-    web.vm.provider :virtualbox do |vb|
+    web1.vm.provider :virtualbox do |vb|
       vb.name = "WebBox1"
       vb.memory = 1024
       vb.customize ["modifyvm", :id, "--description", "WebBox is an apache VM used to demonstrate Infrastructure as code principles via Vagrant. It is also used to demonstrate defining multiple machines in a single Vagrantfile."]
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   
   # Configure the Web Server2
   config.vm.define "WebExampleBox2" do |web2|
-    web.vm.provider :virtualbox do |vb|
+    web2.vm.provider :virtualbox do |vb|
       vb.name = "WebBox2"
       vb.memory = 1024
       vb.customize ["modifyvm", :id, "--description", "WebBox is an apache VM used to demonstrate Infrastructure as code principles via Vagrant. It is also used to demonstrate defining multiple machines in a single Vagrantfile."]
