@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--description", "WebBox is an apache VM used to demonstrate Infrastructure as code principles via Vagrant. It is also used to demonstrate defining multiple machines in a single Vagrantfile."]
     end
 
-    # After vagrant up, should see VM's web page in browser at 192.168.3.5
+    # After vagrant up, should see VM's web page in browser at 192.168.3.6
     web2.vm.network "private_network", ip: "192.168.3.6"
     web2.vm.hostname = "Web2"
     web2.vm.synced_folder ADDITIONALFILES, "/var/www"
