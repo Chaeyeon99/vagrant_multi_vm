@@ -65,7 +65,7 @@ function nonempty($input)
 //Insert entered form info into the database
 function insertInfo($db,$first,$last,$email)
 {
-	$stmt = $db->prepare("INSERT INTO response(firstname, lastname, email, submitdate) VALUES (:first, :last, :email, :date)");
+	$stmt = $db->prepare("INSERT INTO response2(firstname, lastname, email, submitdate) VALUES (:first, :last, :email, :date)");
 	$stmt->bindParam(':first', $first);
 	$stmt->bindParam(':last', $last);
 	$stmt->bindParam(':email', $email);
