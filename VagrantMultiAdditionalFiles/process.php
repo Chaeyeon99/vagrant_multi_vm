@@ -11,7 +11,7 @@ echo $_POST['last'];
 
 $username = 'root';
 $password = 'rootpass';
-$dsn = 'mysql:host=192.168.3.6;dbname=formresponses';
+$dsn = 'mysql:host=192.168.3.7;dbname=formresponses';
 
 try{
 	$db = new PDO($dsn, $username, $password);
