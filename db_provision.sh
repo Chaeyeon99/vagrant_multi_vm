@@ -19,13 +19,16 @@ echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootpass' WITH GR
 #echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --password=rootpass
 sudo service mysql restart
 
-# Create database for form responses (WebExampleBox)
+# Create response1, response2
 mysql -uroot -p'rootpass' -e "DROP DATABASE IF EXISTS formresponses; 
 	CREATE DATABASE formresponses; 
 	USE formresponses; 
-	CREATE TABLE response (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+	CREATE TABLE response1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
 		firstname VARCHAR(20), lastname VARCHAR(20), 
-		email VARCHAR(50), submitdate DATETIME);"
+		email VARCHAR(50), submitdate DATETIME);
+	CREATE TABLE response2 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		firstname VARCHAR(20), lastname VARCHAR(20),
+		hobby VARCHAR(50), submitdate DATETIME);"
 sudo service mysql restart
 
 echo cd / >> /home/vagrant/.bashrc
