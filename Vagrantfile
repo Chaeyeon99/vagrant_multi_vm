@@ -3,6 +3,7 @@
 # Example Multi-Box edited by Jessica Rankins 4/17/2017
 
 ADDITIONALFILES = Dir.pwd + "/VagrantMultiAdditionalFiles"
+ADDITIONALFILES2 = Dir.pwd + "/VagrantMultiAdditionalFiles2"
 
 
   # All Vagrant configuration is done below. The "2" in Vagrant.configure
@@ -42,7 +43,7 @@ Vagrant.configure("2") do |config|
     # After vagrant up, should see VM's web page in browser at 192.168.3.6
     web2.vm.network "private_network", ip: "192.168.3.6"
     web2.vm.hostname = "Web2"
-    web2.vm.synced_folder ADDITIONALFILES, "/var/www"
+    web2.vm.synced_folder ADDITIONALFILES2, "/var/www"
     web2.vm.provision :shell, path: "web_provision.sh"
 
     # display this message at end of vagrant up
