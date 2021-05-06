@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     end
 
     # After vagrant up, should see VM's web page in browser at 192.168.3.6
-    web2.vm.network "private_network", ip: "192.168.3.6"
+    web2.vm.network "private_network", ip: "192.168.3.7"
     web2.vm.hostname = "Web2"
     web2.vm.synced_folder ADDITIONALFILES2, "/var/www"
     web2.vm.provision :shell, path: "web_provision.sh"
@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
 
     db.vm.hostname = "DB"
     db.vm.provision :shell, path: "db_provision.sh"
-    db.vm.network "private_network", ip: "192.168.3.7"
+    db.vm.network "private_network", ip: "192.168.3.6"
    
     # display this message at end of vagrant up
     config.vm.post_up_message = "Successfully started DB."
