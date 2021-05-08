@@ -10,12 +10,10 @@ try{
 	$result=FALSE;
 
     $query = "SELECT * FROM response1";
-    $query2 = "SELECT * FROM response2";
+
     $stmt = $db->query($query);
-    $stmt2 = $db->query($query2);
     
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $rows2 = $stmt2->FetchAll(PDO::FETCH_ASSOC);
 
     
     echo "<table border='1'>
@@ -26,21 +24,6 @@ try{
     </tr>";
 
     foreach($rows as $row) {
-        echo "<tr>";
-        echo "<td>".$row['firstname']."</td>";
-        echo "<td>".$row['lastname']."</td>";
-        echo "<td>".$row['email']."</td>";
-        echo "</tr>";
-
-        //printf("{$row['firstname']} {$row['secondname']} {$row['email']}\n");
-    echo "<table border='1'>
-    <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>email</th>
-    </tr>";
-
-    foreach($rows2 as $row) {
         echo "<tr>";
         echo "<td>".$row['firstname']."</td>";
         echo "<td>".$row['lastname']."</td>";
