@@ -1,5 +1,5 @@
 # vagrant_multi_vm
-### Cloud Security Lecture
+### Cloud Security
 
 ### GOALS:
 - Based on Multi-server vagrant environment.
